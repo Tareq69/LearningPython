@@ -1,0 +1,11 @@
+
+
+
+
+
+------------------- Python Tutorial ----------------------------------
+
+1. vartiables in python -> x = 5; we don't have to specify the datatype
+2. lists in python -> x = [1,1.5,"Tareq"]. Lists are defined in square brackets. Lists objects are mutable. List can store list objects inside list too.
+3. Tuples in python -> x = (1,2,3,4). Tuples are like lists but tuple elements are immutable
+4. Set in python -> x = {1,2,3,4}. Set elements cannot be accesed by indexing. Set stores elements in random order. Sets are used in hashing.
