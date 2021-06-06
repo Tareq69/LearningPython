@@ -3,9 +3,43 @@
 
 
 
-------------------- Python Tutorial ----------------------------------
+------------------------------------ Python Tutorial ----------------------------------
+started watching on: 02/06/2021, June 2, 2021
+videos watched till: #21
 
 1. vartiables in python -> x = 5; we don't have to specify the datatype
 2. lists in python -> x = [1,1.5,"Tareq"]. Lists are defined in square brackets. Lists objects are mutable. List can store list objects inside list too.
 3. Tuples in python -> x = (1,2,3,4). Tuples are like lists but tuple elements are immutable
 4. Set in python -> x = {1,2,3,4}. Set elements cannot be accesed by indexing. Set stores elements in random order. Sets are used in hashing.
+5. Dictionary in Python -> data = {'key':value}
+6. Variables -> When we assign multiple variables to a same number, they do not get assigned with new address but instead points to the same address that contains the value. This is why python is much more memory efficient than other programming languages.
+7. Data types in Python -> None, Numeric (int, float, complex, boolean), Lists, Tuple, Set, Range and Dictionary(mapping).
+8. Operators in python -> Arithmatic (+,-,*,/,+=,-=,*=,/=), Relational (>,<,>=,<=,==,!=), Logical (and,or,not)
+9. Number conversion -> bin(x),hex(x),oct(x),0b->bin,0o->Oct,0x->Hex. x is a decimal number.
+10. swapping value of variables. a = 5, b=6, we can swap using -> a = a xor b, b= a xor b, a = a xor b. Another way is
+a = a+b, b = a - b, a = a - b and one more way is a,b = b,a
+11. Bitwise operator -> Complement(`), Bitwise and(&), Bitwise OR(||), XOR (^), left shift (<<), Right shift(>>)
+12. Math functions in python -> import math, use math.sqrt(), math.pow wtc. functions. We can also use alias like import math as m then do m.sqrt(), m.pow(). Math is the module here that is imported from python where we have all the math fucntions predefined. 
+13. Pycharm is the ide that i am using. To write and execute python codes just open pycharm then create a new project. Then right click on project folder and create new python file. Then run, debug and do other things with the code as needed.
+14. User input in Python -> To take input from user we have to use the input() function. But, input() function by default takes strings as user input so to take 
+integer, float or any other type of data as input we have to convert the string to that data type. Example: int(input("Enter an integer: ")). To take a character as input we will use input("Enter a character")[0] this line of code.
+15. Conditional statements in python -> If, elif, else. We have to use indentation while using these statements (preferred tab button in keyboard).
+16. Loops in python -> 1. While loop, 2. For loop
+			While loop-> i = 1; while(i<=5): print("Hi) i = i+1 ; Use indentation after while block
+			For loop-> x = [1,2,3,4], for i in x: some code. For loop can be used on  string,lists,tuple,sets etc. we just have to pass the list or the data in for loop with a counter for example say i. Condition increment of the counter is done by for loop itself.
+
+17. Break, Continue and pass in python -> Break statement will exit out of the loop, Continue statement will not execute the furhter statements and return back to the condition (simply put skip some execution based on condition). Pass will be used to pass a block of code.
+
+18.For Else in python-> We can  use else block with For loop in python. Just use For loop and use else block indented with the for loop. We need to also use the break keyword in the if block while using for else.
+
+
+
+
+
+
+
+
+
+
+
+			
