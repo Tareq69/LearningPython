@@ -5,7 +5,7 @@
 
 ------------------------------------ Python Tutorial ----------------------------------
 started watching on: 02/06/2021, June 2, 2021
-videos watched till: #21
+videos watched till: #35
 
 1. vartiables in python -> x = 5; we don't have to specify the datatype
 2. lists in python -> x = [1,1.5,"Tareq"]. Lists are defined in square brackets. Lists objects are mutable. List can store list objects inside list too.
@@ -31,6 +31,37 @@ integer, float or any other type of data as input we have to convert the string 
 17. Break, Continue and pass in python -> Break statement will exit out of the loop, Continue statement will not execute the furhter statements and return back to the condition (simply put skip some execution based on condition). Pass will be used to pass a block of code.
 
 18.For Else in python-> We can  use else block with For loop in python. Just use For loop and use else block indented with the for loop. We need to also use the break keyword in the if block while using for else.
+
+19. Arrays in python -> We can use arrays in python too. Difference between array and lists are that the datas stored in array should be of same data type but lists do not. To use array we need to import the array module. import array  or from array import * . When initializing the array we have to use a typecode which tells the type of the data type. 
+Example : arr = array('i',[1,2,3,4,5,6]), newArr = array(arr.typecode,( a for a in arr )//creating a new array and copying arr arrays value in newArr.
+
+20. Array input from user in python ->                                                                                    
+from array import *                                                               
+                                                                                  
+val = array('i',[])                                                               
+                                                                                  
+n = int(input("Enter the length of array"))    // Taking the length from user                                   
+                                                                                  
+for i in range(n):                                                                
+    x = int(input("Enter the value in array"))  // Taking the value from user                                  
+    val.append(x)      // appending the user input value in array                                                            
+print(val)                                                                        
+// val.index(some value)// Method to search the index of a value              
+
+21. Numpy in python -> Numpy is a python package that lets us to work with multidimensional arrys and a lot other things. Cmd command to install numpy -> pip3 install numpy. We also need to install numpy on our ide.
+
+22. Arrays in numpy -> at first import array module. from numpy import *. Then initialize the array -> arr = (array[1,2,3],int). Type initialization is optional.
+
+23. Different ways of creating arrays using numpy -> array(),linspace(),logspace(),zeroes(),ones(),arange()
+
+24. Functions in python -> Function let's us reuse codes. syntax of function -> def function(): . Function takes arguments too. Example: def add(a,b). Functions can execute some statement and they can also return some value. To return some value we have to use the return keyword in function. Example: def sub(a,b): c = a-b , return c. We can return multiple values too.
+25. Arguments in python -> Argument passing in python is neither pass by referrence or pass by value. 
+In Python, we don't have the concept of 'pass by value' or 'pass by reference'. Instead, we have immutable or mutable arguments passed to the function. If we pass immutable objects like integer or string to function and try to update their value, their original value will not be updated instead a new variable will be created with updated value at new memory address. If we pass mutable objects like list or dictionary and try to update them, their original value will be updated at the same memory address
+26. Types of arguments in python -> Position (pass the arguments in sequence), Keyword(pass the arguments using their name as keyword like name="",age=""), default(if a argument is not passed by default we can pass an argument but if an argument is passed the default argument is overwritten Example: person(name,age=18)), Variable length (Variable length let's us use as many arguments as we want in the function, to use this we pass an argument with * before the argument name which will pass a tuple. Example: def sum(a,*b))
+27.keyword variable length arguments -> We know we can pass multiple arguments using variable length but if we also want to pass keywords for those arguments we can use vkargs, for that we just have to use ** before the argument name). Example: def person(name, **data).
+28.
+                                                                    
+                                                                                  
 
 
 
