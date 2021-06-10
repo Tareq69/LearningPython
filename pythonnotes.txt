@@ -5,7 +5,7 @@
 
 ------------------------------------ Python Tutorial ----------------------------------
 started watching on: 02/06/2021, June 2, 2021
-videos watched till: #35
+videos watched till: #43
 
 1. vartiables in python -> x = 5; we don't have to specify the datatype
 2. lists in python -> x = [1,1.5,"Tareq"]. Lists are defined in square brackets. Lists objects are mutable. List can store list objects inside list too.
@@ -59,7 +59,35 @@ print(val)
 In Python, we don't have the concept of 'pass by value' or 'pass by reference'. Instead, we have immutable or mutable arguments passed to the function. If we pass immutable objects like integer or string to function and try to update their value, their original value will not be updated instead a new variable will be created with updated value at new memory address. If we pass mutable objects like list or dictionary and try to update them, their original value will be updated at the same memory address
 26. Types of arguments in python -> Position (pass the arguments in sequence), Keyword(pass the arguments using their name as keyword like name="",age=""), default(if a argument is not passed by default we can pass an argument but if an argument is passed the default argument is overwritten Example: person(name,age=18)), Variable length (Variable length let's us use as many arguments as we want in the function, to use this we pass an argument with * before the argument name which will pass a tuple. Example: def sum(a,*b))
 27.keyword variable length arguments -> We know we can pass multiple arguments using variable length but if we also want to pass keywords for those arguments we can use vkargs, for that we just have to use ** before the argument name). Example: def person(name, **data).
-28.
+
+28. Global and local variablesin python -> We have two scope while initializing variables. If we initialize a variable inside a function or some local block that variable can't be accessed globally. But we initialize a variable globally we can use it everywhere in the code. If we want initialize a variable as global we use the global keyword i.e. 
+
+global a = 15; After we initialize a variable as global we can't initialize it as local. If we want both local and global variable in a code we can use globals() method. We will just specify the global variable whose value we want to change. Example: globals()['a'] = 15.
+
+29. Recursion in python -> Recursion is a concept that allows a function to call itself.
+
+30. Annonymous function -> Function without name or Lambda. Define a function with the help of lambda which doesn't have a name and takes one expression. Example: f = lambda a: a*a. f(5) -> 25
+
+31. Filter, Map, Reduce -> Filter function filters a sequence based on a function. It takes two parameters.sequence(Filter(function, sequence)). We can also pass a lambda function inside Filter.
+E.g. nums = [2,3,4,5,6,7,8,9,10]
+
+evens = list(filter(lambda n:n%2==0,nums))
+
+print(evens)
+
+# Map just like filter also takes two parameters, a function and a iterable. Map can be used to update each element of the iterable by doing some operation. E.g. inc2 = list(map(lambda n:n+2,evens)), print(inc2)
+
+# Reduce also takes 2 parameters, a function and a sequence. We can do an opertaion on the whole sequence using reduce. E.g. sum = sum = reduce(lambda a,b: a+b,inc2)
+
+Know what is the difference between filter, reduce and map:
+
+map: Takes a function f, and a list L1, and returns a list L2 obtained by applying f to every element of L1. Say f is a function that takes x and returns 2x. Then, map(f, [1,2,3,4]) returns [2,4,6,8].
+
+reduce: Takes a binary operator f, a list L and a seed value (or identity element). It returns the seed value if the list is empty. Otherwise, it applies the binary operator f to the seed and first element of L, then applies f to the result of this and the 2nd element of L, and so on till L is exhausted. The result is returned. This can be seen as a generalization of factorial function.
+
+filter: Takes a boolean function f and a list L1. It applies the function to each element of L1, and list of those elements that give true is returned.
+
+32. 
                                                                     
                                                                                   
 
