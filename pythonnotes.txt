@@ -5,7 +5,7 @@
 
 ------------------------------------ Python Tutorial ----------------------------------
 started watching on: 02/06/2021, June 2, 2021
-videos watched till: #43
+videos watched till: #49
 
 1. vartiables in python -> x = 5; we don't have to specify the datatype
 2. lists in python -> x = [1,1.5,"Tareq"]. Lists are defined in square brackets. Lists objects are mutable. List can store list objects inside list too.
@@ -87,7 +87,106 @@ reduce: Takes a binary operator f, a list L and a seed value (or identity elemen
 
 filter: Takes a boolean function f and a list L1. It applies the function to each element of L1, and list of those elements that give true is returned.
 
-32. 
+32. Decorators in python ->
+
+33. Module in python -> Modules can be defined as a new file which will contain some code. We use module to divide our project in different parts. We can import a module and use all the functions/classes  of that module to build our project. Example of module -> 
+demo.py
+
+from Calc import *
+
+a = 5
+b = 3
+
+c = multi(a,b)
+print(c)
+
+Calc.py 
+
+
+def add (a,b):
+    return a+b
+
+
+def sub (a,b):
+    return a-b
+
+
+def multi (a,b):
+    return a*b
+
+
+def div (a,b):
+    return a/b
+
+34. Special variale __name__ -> This special variable indicates to the main module. If we print the value of __name__ in one module it will return the value main indicating that it is the main module but if we import a module in another module, the __name__ varibale instead of returning the main varibale will return name of the imported module and return main value for the current module. if __name == "__main__" do something, else do the other tasks.
+
+35. Object Oriented Programming in Python -> We want to solve real world problems using virtual software. In real world Everything is an Object. Example: employee, laptop everything. Object has certain attributes and behavior/property. Example: Name,age, id are attribute and Eat, sleep, certain tasks are property or behavior. Functions are called methods in oop. OOP has two most important things. Classes and Object.
+
+Special Note: Everything is an object in python. Which means every variable are objects of certain classes. For example if we assign x = 9, Here, x is an object of class "int".
+
+36. Classes and Objects in oop -> Class is the design/blueprint of an object. Objects are the instances of a design.
+
+Class -> Class Classname():
+Objects -> objname = Class()
+
+37. init method -> init method is used similar to a constructor. We can pass arguments in init method. init method by default always takes an argument called self which passes to the object of that classes. Self is the object pointer which means we are passing the object itself by using self or in other words self regeres to an object of a certain class.
+
+38.   Everytime we create an object it takes a new memory space.
+		c1 = Computer() -> This is the constructor. Constructor defines the size of the object
+ Comparing two objects - > Define a compare method which takes two parameter(self,other). self parameters refers to the object with which we are comparing another object. other parameter refers to the other object that we are comparing self object with. Example: 
+
+class Computer:
+
+    def __init__(self,name,age):
+        self.age = age
+        self.name = name
+
+
+
+    def config(self):
+        print("Identificatin is: ",self.name,self.age)
+
+    def updateAge(self,age):
+        self.age = age
+    def compare(self,other):
+        if(self.age==other.age):
+            print("Their age are same")
+        else:
+            print("Their age are not same")
+
+
+comp1 = Computer("Navin", 28)
+comp1.updateAge(30)
+comp2 = Computer("Tareq", 30)
+comp1.compare(comp2)
+
+
+39. Instance variable and Class variable ->  Variables declared inside init methods are called instance variables and variables declared outside init methods but inside a class are called Class variables. If we want to change the value of a class variable we need to use the Class.variable = newvalue. For instance variables we can just call the object.variable and change the values. Example -> 
+
+
+class Car:    # Defining a class
+    wheels = 4       # this is a class variable
+    def __init__(self):  # Init method of the class car
+        self.com = "Com" # this is an instance variable
+        self.mil = 10     # this is an instance variable
+
+
+
+c1 = Car()              # Creating an object c1 of class Car
+c1.mil = 20             # this is an instance variable
+c1.com = "Lamorghini"   # this is an instance variable
+c2 = Car()              # Creating an object c2 of class Car
+c2.mil = 15             # this is an instance variable
+c2.com = "Ferrari"      # this is an instance variable
+
+Car.wheels = 6  # Changes the class variable wheels value to 6 from 4
+
+print(c1.com,c1.mil,c1.wheels)
+print(c2.com,c2.mil,c1.wheels)
+
+40. Class methods, Static methods and Instance methods -> Accessor - Getter Methods( Gets some values) and Mutator - Setter Methods (Sets some values). Example: avg(self). These are the instance methods. Class methods are used to work with class variables. Exmaple:  @classmethod def schoolInfo(cls) : return cls.school . If we want to use a method to work with neither the class variables or instance variables we use the static method. Example: @staticmethods def info: print("This is student class"). We will call the static methods using classname.staticmethodname().
+
+
                                                                     
                                                                                   
 
