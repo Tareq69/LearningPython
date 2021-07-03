@@ -5,7 +5,7 @@
 
 ------------------------------------ Python Tutorial ----------------------------------
 started watching on: 02/06/2021, June 2, 2021
-videos watched till: #49
+videos watched till: #62
 
 1. vartiables in python -> x = 5; we don't have to specify the datatype
 2. lists in python -> x = [1,1.5,"Tareq"]. Lists are defined in square brackets. Lists objects are mutable. List can store list objects inside list too.
@@ -186,6 +186,235 @@ print(c2.com,c2.mil,c1.wheels)
 
 40. Class methods, Static methods and Instance methods -> Accessor - Getter Methods( Gets some values) and Mutator - Setter Methods (Sets some values). Example: avg(self). These are the instance methods. Class methods are used to work with class variables. Exmaple:  @classmethod def schoolInfo(cls) : return cls.school . If we want to use a method to work with neither the class variables or instance variables we use the static method. Example: @staticmethods def info: print("This is student class"). We will call the static methods using classname.staticmethodname().
 
+41. innerclass -> innerclass refers to the concept of creating a class inside an existing class. For example for a student class we can have a laptop class which will store the info of student's laptop. After defining the laptop class we can create an object of laptop class in the outer class inside a variable. 
+Example ->   
+class Student:
+
+    def __init__(self,name,age):
+        self.name = name
+        self.age = age
+        self.lap = self.Laptop()
+
+    def show(self):
+        print(self.name, self.age)
+        self.lap.show()
+
+    class Laptop:
+
+        def __init__(self):
+            self.cpu = "cpu"
+            self.ram =  4
+
+        def show(self):
+            print(self.cpu, self.ram)
+
+
+
+s1 = Student("Tareq","25")
+s1.lap.cpu = "i5"
+s1.lap.ram = 8
+s1.show()
+
+42. inheritance -> A class can inherit all the feature of another Feature. Class B (A) means class B inherits class A. A is the superclass and B is the subclass. This is single level inheritence. We can have multilevel inheritence too. Just use Class C(B). It is inheritting A and B. We can also do Class C(A,B)// this is multiple.
+
+43. Constructor in inheritence -> Init will be called for superclass if subclass doesn't have init. If subclass does have init method, that init will be called. We can call the init of superclass using super.init. super().--init--.
+Method and init in multiple will be called from left first (MRO).
+
+44. Polymorphism -> One things can take many forms. Objects will have multiple forms. 4 Ways of implementing polymorphism. 1) Duck Typing, 2) Operator Overloading, 3) Method Overloading 4)Method Overriding.
+At office we are one way, at home we are one way, so we are polymorphic.
+
+Duck typing -> If the behavior matches with duck, it probably is a duck. If we have a method that takes an argument of some class, we can use some method of that class given that that method exists in that class or maybe in other classes as well. We just have to pass the class we want and make sure we have the method existing in that class. Example: 
+
+class Pycharm:
+    def execute(self):
+        print('Compiling')
+        print("Running")
+
+
+class Intellij:
+    def execute(self):
+        print('Checking')
+        print("Testing")
+        print('Compiling')
+        print("Running")
+
+class Laptop:
+
+    def code(self,ide):
+        ide.execute()
+
+
+ide = Intellij()
+lap1 = Laptop()
+lap1.code(ide)
+
+Operator Overloading -> 5 + 6 -> 5 and 6 are the operands and + is the operator. By operator overloading we mean that we can overwrrite or overload any of the predefined methods that are already written in python and replace them with some code that we want to implement. Example:
+#
+# a = '5'
+# b = '6'
+#
+# print(a + b)
+#
+# print(str.__add__(a,b))
+
+class Student:
+
+    def __init__(self,m1,m2):
+        self.m1 = m1
+        self.m2 = m2
+
+    def __add__(self, other):
+        m1 = self.m1 + other.m1
+        m2 = self.m2 + other.m2
+        s3 = Student(m1,m2)
+
+        return  s3
+
+    def __gt__(self, other):
+        r1 = self.m1 + self.m2
+        r2 = other.m1 + other.m2
+        if r1 > r2:
+            return True
+        else:
+            return False
+
+    def __str__(self):
+        return '{} {}'.format( self.m1,self.m2)
+
+
+s1 = Student(58,69)
+s2 = Student(69,65)
+
+s3 = s1 + s2
+
+if s1 > s2:
+    print("s1 wins")
+else:
+    print("s2 wins")
+
+a = 9
+print(a.__str__())
+
+print(s2)
+
+Method Overloading -> Method overloading is not supporrted in python so we need to write some functions to implement it.
+Method Overriding -> A method is being overridden by a new method. Example: If i don't have a phone I say my mother's phone is my phone but when i buy a new phone i say my phone is my new phone so i am overriding my mother's phone. 
+Example:    
+class A:
+
+    def show(self):
+        print("In a Show")
+
+class B(A):
+     def show(self):
+        print("In B show")
+
+a = B()
+a.show()  // Prints in B show
+
+
+
+45. Abstract Classes and methods -> abstract method is a method which only has declaration and doesn't have definition.
+a class is called abstract class only if it has at least one abstract method.
+when you inherit a abstract class as a parent to the child class, the child class should define all the abstract method present in parent class.
+if it is not done then child class also becomes abstract class automatically.
+at last, python by default doesn't support abstract class and abstract method, so there is a package called ABC(abstract base classes) by which we can make a class or method abstract.
+
+Example:
+
+from abc import ABC, abstractmethod
+
+class Computer(ABC):
+    @abstractmethod
+    def process(self):
+        pass
+
+
+class Laptop(Computer):
+    def process(self):
+        print("Running.......")
+
+
+com1 = Laptop()
+com1.process()
+
+46. Iterator ->
+
+47. Generator ->
+
+48. Exception handling in python ->  Syntax error, Logical error, Runtime error
+
+Example: 
+
+a = 5
+b = 0
+
+
+try:
+    print(a / b)
+except Exception as e:
+    print("You can't divide by 0", e)
+
+finally:
+    print("Resource closed")
+
+49. Multithreading in python-> Each thread executes a task. So if we want to run multiple task parallaly we will use multiple threads. 
+Example: from time import sleep
+from threading import Thread # Using thread to run two function parallaly using two thread
+
+
+class Hello(Thread):
+    def run(self):
+        for i in range(5):
+            print("Hello")
+            sleep(1) # Execute Hello then wait 1 sec for Hi to execute
+
+class Hi(Thread):
+    def run(self):
+        for i in range(5):
+            print("Hi") #Execute Hi then wait 1 sec for Hello to execute
+            sleep(1)
+
+
+a1 = Hello()
+a2 = Hi()
+# Important thing to notice is Main thread will run a1 and a2 thread
+a1.start() # Start method creates a new thread a1. We are using start method instead of run cause
+# its override the run method
+sleep(0.2) # To avoid collision
+a2.start() # Start method creates a new thread a1. We are using start method instead of run cause
+# its override the run method
+
+a1.join() # Main thread will wait untill a1 joins a2 and then execute Bye
+a2.join() # Main thread will wait untill a1 joins a2 and then execute Bye
+
+print("Bye")
+
+50. File Handling in python -> We can read, write or append something to a file. Opening a file -> f = open()
+
+Reading from a file -> f = open('Bhrom.txt','r') # Opening a file in reading mode
+
+print(f.read()) # Reading the entire file
+for i in range(5):
+    print(f.readline(),end="") # Reading the first 5 line of the file
+
+Writting from a file ->  f1 = open('abc.txt','w') # opening a file in writting mode. If the file doesn't exist python
+# will create a file of this name.
+f1.write("hakndmanhfaf") # writting something in the file. Remember everytime we write something
+# it will overwrite the previous elements in file.
+
+Appending in a file ->  f2 = open('abc.txt','a') # Opening a file in append mode
+f2.write(" I am learning python") # appending new elements in the file
+
+
+Use rb, sb, ab while dealing with binary file like images.
+
+51. Comments in python -> Comments are to let you remind what you did with this code . It also helps when you are working in a group. Example: This function is responsible to handle exceptions etc... A comment is written by putting a # in the beginning of the line. In python we do not have multi line comments. To comment multiple lines use multiple # .
+
+
+
+
+				 
 
                                                                     
                                                                                   
